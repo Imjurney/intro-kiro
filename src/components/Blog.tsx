@@ -23,7 +23,7 @@ const blogPosts: BlogPost[] = [
     title: "Kiro 한국 사용자를 위한 가이드",
     summary:
       "Kiro 한국 사용자를 위한 가이드는 AWS의 공식 입장이 아니며, 개인이 번역/의역한 가이드입니다.의미가 모호할 때는 각 블로그 내의 영어 원문을 참조합니다. 제9장은 AWS 계정 기반의 실습이므로, 비용이 발생할 수 있습니다.",
-    date: "2054-07-17",
+    date: "2025-07-17",
     link: "https://whchoi98.notion.site/Kiro-23104ef7e60e80d3b838e13d2d65498e",
     category: "가이드",
     readTime: "노션",
@@ -44,7 +44,7 @@ const blogPosts: BlogPost[] = [
     title: "Kiro Pricing Plans Are Now Live",
     summary:
       "Over the past few weeks, we have shared several important Kiro pricing updates. We made these updates to our pricing model in response to your feedback. Many in our community have asked for a way to use Kiro above and beyond the",
-    date: "2024-08-15",
+    date: "2025-08-15",
     link: "https://kiro.dev/blog/pricing-plans-are-live/",
     category: "가격 정책",
     readTime: "블로그",
