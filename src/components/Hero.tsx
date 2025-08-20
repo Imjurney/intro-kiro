@@ -121,7 +121,7 @@ export const Hero = ({ className = "" }: HeroProps) => {
                 }`}
               >
                 <span className="text-xl">🚀</span>
-                키로 바로 보러가기
+                KIRO 바로 보러가기
               </span>
             </button>
 
