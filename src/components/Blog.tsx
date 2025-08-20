@@ -203,11 +203,7 @@ const BlogCard = ({ post, index }: BlogCardProps) => {
   );
 };
 
-interface BlogProps {
-  className?: string;
-}
-
-export const Blog = ({ className = "" }: BlogProps) => {
+export const Blog = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
 
@@ -242,7 +238,7 @@ export const Blog = ({ className = "" }: BlogProps) => {
   );
 
   return (
-    <Section ref={sectionRef} background="gray" className={className}>
+    <Section ref={sectionRef} background="gray" className={"pb-16"}>
       {/* 섹션 헤더 */}
       <div ref={headerRef} className="text-center mb-12 sm:mb-16">
         <h2 className="text-2xl font-bold text-white mb-4 sm:mb-6">
