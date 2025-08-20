@@ -34,7 +34,7 @@
   "devDependencies": {
     "@eslint/js": "^9.33.0",
     "@tailwindcss/vite": "^4.1.12",
-    "@types/node": "^24.3.0",
+    "@types/node": "^20.0.0",
     "@types/react": "^19.1.10",
     "@types/react-dom": "^19.1.7",
     "@vitejs/plugin-react": "^5.0.0",
@@ -61,8 +61,8 @@
       "maxSize": "50 kB",
       "compression": "gzip"
     }
-  ]
-  , "engines": {
+  ],
+  "engines": {
     "node": ">=18.0.0 <22.0.0"
   }
 }
