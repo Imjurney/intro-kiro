@@ -7,4 +7,3 @@ export { Testimonials } from "./Testimonials";
 export { Blog } from "./Blog";
 export { Pricing } from "./Pricing";
 export { Footer } from "./Footer";
-export { OptimizedImage } from "./OptimizedImage";
