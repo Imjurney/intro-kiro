@@ -1,0 +1,270 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+@import "tailwindcss";
+
+@theme {
+  /* KIRO Brand Colors */
+  --color-primary: #8f46ff;
+  --color-secondary: #000000;
+  --color-accent: #6366f1;
+
+  /* Extended Color Palette */
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+
+  /* Typography */
+  --font-family-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-family-heading: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+@keyframes marquee-up {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes marquee-down {
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes marquee-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@layer base {
+  /* 기본 박스 모델 설정 */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* HTML/Body 기본 설정 */
+  html {
+    width: 100%;
+    height: 100%;
+
+    -webkit-text-size-adjust: 100%; /* iOS Safari 텍스트 크기 조정 방지 */
+    -ms-text-size-adjust: 100%; /* IE 텍스트 크기 조정 방지 */
+    text-size-adjust: 100%; /* 표준 */
+  }
+
+  /* 루트 컨테이너 */
+  #root {
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: clip;
+    position: relative;
+  }
+
+  /* 모바일 터치 최적화 */
+  button,
+  input,
+  select,
+  textarea {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0; /* iOS 기본 둥근 모서리 제거 */
+    font-family: inherit;
+    font-size: inherit;
+  }
+
+  /* 터치 액션 최적화 */
+  button {
+    touch-action: manipulation; /* 더블탭 줌 방지 */
+    -webkit-tap-highlight-color: transparent; /* 터치 하이라이트 제거 */
+  }
+
+  /* 링크 터치 최적화 */
+  a {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  body {
+    overflow-x: hidden;
+    font-family: var(--font-family-sans);
+    line-height: 1.6;
+    color: var(--color-gray-100);
+    background: linear-gradient(
+      135deg,
+      var(--color-secondary) 0%,
+      #1a1a1a 50%,
+      #0a0a0a 100%
+    );
+    min-height: 100vh;
+  }
+
+  /* Heading Styles */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-family-heading);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--color-gray-900);
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Mobile-first container utility class */
+}
+
+@layer components {
+  /* Section spacing utilities - Mobile First */
+
+  .section-padding {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .transition-all {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 0.15s;
+  }
+
+  /* Button base styles - Touch Optimized */
+  .btn-base {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.875rem 1.5rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    min-height: 44px; /* Touch target minimum */
+    min-width: 44px;
+  }
+
+  @media (min-width: 480px) {
+    .btn-base {
+      padding: 1rem 2rem;
+      min-height: 48px;
+    }
+  }
+
+  .btn-primary {
+    background-color: var(--color-primary);
+    color: white;
+  }
+
+  .btn-primary:hover {
+    background-color: color-mix(in srgb, var(--color-primary) 90%, black);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -5px color-mix(in srgb, var(--color-primary) 50%, transparent);
+  }
+
+  .btn-secondary {
+    background-color: transparent;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+  }
+
+  .btn-secondary:hover {
+    background-color: var(--color-primary);
+    color: white;
+    transform: translateY(-2px);
+  }
+
+  /* Card styles */
+  .card {
+    background-color: white;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px 0
+      color-mix(in srgb, var(--color-gray-900) 10%, transparent);
+    transition: all 0.3s ease;
+  }
+
+  .card:hover {
+    box-shadow: 0 20px 25px -5px color-mix(in srgb, var(--color-gray-900) 10%, transparent);
+    transform: translateY(-4px);
+  }
+
+  /* Secondary Color Background System */
+  .bg-secondary-gradient-1 {
+    background: linear-gradient(
+      135deg,
+      var(--color-secondary) 0%,
+      #1a1a1a 100%
+    );
+  }
+
+  .bg-secondary-gradient-2 {
+    background: linear-gradient(
+      135deg,
+      #1a1a1a 0%,
+      #2a2a2a 50%,
+      var(--color-secondary) 100%
+    );
+  }
+
+  .bg-secondary-gradient-3 {
+    background: linear-gradient(
+      135deg,
+      var(--color-secondary) 0%,
+      #0f0f0f 50%,
+      #1f1f1f 100%
+    );
+  }
+
+  .bg-secondary-radial {
+    background: radial-gradient(
+      circle at center,
+      #2a2a2a 0%,
+      var(--color-secondary) 70%
+    );
+  }
+
+  /* Grid system utilities - Mobile First */
+  .grid-responsive {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+  }
+}

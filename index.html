@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Performance optimizations -->
+    <meta name="theme-color" content="#8f46ff" />
+    <meta name="color-scheme" content="dark light" />
+
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://kiro.dev" />
+    <link rel="dns-prefetch" href="https://whchoi98.notion.site" />
+
+    <!-- Critical CSS inlining placeholder -->
+    <style>
+      /* Critical CSS for above-the-fold content */
+      #root {
+        min-height: 100vh;
+        background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+      }
+
+      /* Loading animation */
+      .loading-spinner {
+        width: 40px;
+        height: 40px;
+        border: 4px solid #f3f3f3;
+        border-top: 4px solid #8f46ff;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin: 20px auto;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* Prevent layout shift */
+      .hero-section {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+
+    <!-- SEO and Social Meta -->
+    <title>
+      KIRO - AI 개발 어시스턴트 | 빠르게 내 상상을 증명하게 도와주는 도구
+    </title>
+    <meta
+      name="description"
+      content="취준생과 저연차 개발자를 위한 AI 개발 어시스턴트 KIRO. Spec 기반 프로젝트 관리, 시각적 Hooks 시스템으로 개발 생산성을 높여보세요."
+    />
+    <meta
+      name="keywords"
+      content="KIRO, AI 개발도구, 개발 어시스턴트, 취준생, 저연차 개발자, 프론트엔드"
+    />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="KIRO - AI 개발 어시스턴트" />
+    <meta
+      property="og:description"
+      content="빠르게 내 상상을 증명하게 도와주는 AI 개발 도구"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://kiro.dev" />
+    <meta property="og:image" content="/assets/kiro-og-image.png" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="KIRO - AI 개발 어시스턴트" />
+    <meta
+      name="twitter:description"
+      content="빠르게 내 상상을 증명하게 도와주는 AI 개발 도구"
+    />
+    <meta name="twitter:image" content="/assets/kiro-twitter-card.png" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "KIRO",
+        "description": "AI 개발 어시스턴트 - 취준생과 저연차 개발자를 위한 스마트한 코딩 파트너",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Cross-platform",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "KRW",
+          "description": "14일 무료 체험"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Loading fallback -->
+    <noscript>
+      <div
+        style="
+          text-align: center;
+          padding: 50px;
+          color: white;
+          background: #000;
+        "
+      >
+        <h1>KIRO - AI 개발 어시스턴트</h1>
+        <p>
+          JavaScript가 필요합니다. 브라우저에서 JavaScript를 활성화해주세요.
+        </p>
+      </div>
+    </noscript>
+
+    <div id="root">
+      <!-- Initial loading state -->
+      <div
+        style="
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          min-height: 100vh;
+          background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+        "
+      >
+        <div class="loading-spinner"></div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
