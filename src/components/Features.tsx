@@ -243,9 +243,9 @@ export const Features = ({ className = "" }: FeaturesProps) => {
         <div className="text-center mb-10">
           <h2 className="text-2xl font-bold text-white mb-4">주요 기능</h2>
           <p className="text-base text-gray-300 leading-relaxed">
-            KIRO만의 독특한 기능들로
+            기획·코드·테스트까지
             <br />
-            개발 효율성을 극대화하세요
+            KIRO가 팀원이 되어드려요.
           </p>
         </div>
 

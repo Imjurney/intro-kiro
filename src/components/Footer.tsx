@@ -7,9 +7,10 @@ export const Footer = () => {
         maxWidth: "480px",
         margin: "0 auto",
       }}
+      className="fixed bottom-0 w-full"
     >
       <Banner
-        className="shadow-lg bg-transparent w-full font-light"
+        className="shadow-lg bg-black w-full font-light"
         rainbowColors={[
           "rgba(231,77,255,0.77)",
           "rgba(231,77,255,0.77)",
