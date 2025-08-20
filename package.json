@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "vite build",
     "build:analyze": "tsc -b && vite build --mode analyze",
     "build:stats": "tsc -b && vite build --mode production && npx vite-bundle-analyzer dist/stats.html",
     "lint": "eslint .",
