@@ -79,15 +79,7 @@
   - KIRO 로고 및 관련 링크들 구현
   - _Requirements: 9.1, 9.2, 9.3_
 
-- [ ] 11. 모바일 우선 반응형 레이아웃 개선
-
-  - 모바일 우선 디자인으로 전체 레이아웃 재구성
-  - 480px 이상 뷰포트에서 중앙 고정 레이아웃 (max-width 적용) 구현
-  - 모든 섹션의 패딩 및 마진 모바일 최적화
-  - 터치 인터페이스 고려한 버튼 크기 및 간격 조정
-  - _Requirements: 4.1, 4.2, 4.3_
-
-- [x] 11.1 Secondary 컬러 기반 배경 시스템 재구성
+- [x] 11 Secondary 컬러 기반 배경 시스템 재구성
 
   - 전체 페이지 배경을 secondary 컬러 기반으로 재설계
   - 각 섹션별 배경 그라데이션을 secondary 컬러 팔레트로 통일
@@ -95,7 +87,7 @@
   - 브랜드 일관성을 위한 컬러 시스템 정리
   - _Requirements: 5.1, 5.2_
 
-- [x] 11.2 Portfolio Showcase Section을 Blog Section으로 교체
+- [x] 11.1 Portfolio Showcase Section을 Blog Section으로 교체
 
   - 기존 Portfolio Showcase 컴포넌트 제거
   - KIRO 관련 블로그 글 리스트를 표시하는 새로운 Blog Section 구현
@@ -103,36 +95,3 @@
   - 외부 블로그 링크 연결 기능 구현
   - 반응형 그리드 레이아웃 적용 (모바일: 1열, 데스크톱: 2-3열)
   - _Requirements: 6.1, 6.2, 6.3_
-
-- [ ] 12. 성능 최적화 및 로딩 개선
-
-  - 최신 이미지 최적화 (AVIF/WebP 포맷, lazy loading) 구현
-  - 최신 GSAP 플러그인 선택적 로딩 및 트리 쉐이킹 구현
-  - Vite 최신 기능 활용한 코드 스플리팅 및 번들 최적화
-  - pnpm을 활용한 의존성 최적화 및 중복 제거
-  - 3초 이내 로딩 성능 달성을 위한 최적화
-  - _Requirements: 4.3_
-
-- [ ] 13. 애니메이션 성능 최적화
-
-  - GPU 가속 활용 (transform, opacity 우선 사용) 구현
-  - IntersectionObserver를 활용한 뷰포트 내 애니메이션만 실행
-  - 성능이 낮은 기기에서 애니메이션 자동 비활성화 기능 구현
-  - 애니메이션 중 레이아웃 변경 최소화
-  - _Requirements: 5.3_
-
-- [ ] 17. AWS 배포 아키텍처 구성 및 배포
-
-  - AWS S3 정적 웹사이트 호스팅 설정
-  - AWS CloudFront CDN 배포 및 캐싱 최적화 설정
-  - AWS Route 53 도메인 연결 (선택사항)
-  - AWS Certificate Manager SSL 인증서 설정
-  - 최소 비용 아키텍처로 구성 (S3 + CloudFront)
-  - _Requirements: 전체 요구사항 최종 검증_
-
-- [ ] 18. 최종 통합 테스트 및 성능 검증
-  - 모든 컴포넌트 통합 및 전체 페이지 플로우 테스트
-  - Lighthouse 성능 점수 90+ 달성 확인
-  - 브라우저 호환성 테스트 (Chrome, Firefox, Safari, Edge)
-  - AWS 배포 환경에서 최종 성능 테스트
-  - _Requirements: 전체 요구사항 최종 검증_
