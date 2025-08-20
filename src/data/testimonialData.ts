@@ -23,7 +23,7 @@ export const testimonialData = [
   },
   {
     name: "Ihor Sasovets",
-    position: "ead Security Engineer, Penetration Tester",
+    position: "Lead Security Engineer, Penetration Tester",
     company: "TechMagic",
     testimonial:
       "보안 요구사항을 Kiro에 공유했더니 추가적인 프롬프트 없이 암호화와 다양한 보안 코딩 방식을 사용해 취약점 및 안전하지 않은 세션 핸들링을 방지하는 완전히 안전한 애플리케이션을 구축할 수 있었습니다.",
