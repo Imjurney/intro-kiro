@@ -1,9 +1,9 @@
-import { useRef, useState } from "react";
-import { Section } from "./Layout";
-import useGSAP from "../hooks/useGSAP";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { TextPlugin } from "gsap/TextPlugin";
+import { useRef, useState } from 'react';
+import { Section } from './Layout';
+import useGSAP from '../hooks/useGSAP';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { TextPlugin } from 'gsap/TextPlugin';
 
 // GSAP 플러그인 등록
 gsap.registerPlugin(ScrollTrigger, TextPlugin);
@@ -17,24 +17,25 @@ interface DifferentiationFeature {
 
 const differentiationFeatures: DifferentiationFeature[] = [
   {
-    id: "spec-mode",
-    title: "Spec 모드",
+    id: 'spec-mode',
+    title: 'Spec 모드',
     description:
-      "요구사항을 입력하면 설계 → 코드 → 테스트까지 자동으로 분리된 단위 작업으로 관리.",
-    icon: "📋",
+      '요구사항을 입력하면 설계 → 코드 → 테스트까지 자동으로 분리된 단위 작업으로 관리.',
+    icon: '📋',
   },
   {
-    id: "vs-code",
-    title: "VS code와 호환",
-    description: "그동안 사용해왔던 확장 \n 그대로 가져와 시작이 가능해요.",
-    icon: "🖥️",
+    id: 'extends',
+    title: '쉽게 설치하고 바로 사용 가능',
+    description:
+      'VS Code 확장 그대로, builder id·깃허브·구글 등 원클릭 로그인.',
+    icon: '🖥️',
   },
   {
-    id: "natural-language",
-    title: "자연어로 Hooks 설정",
+    id: 'natural-language',
+    title: '자연어로 Hooks 설정',
     description:
-      "일상 언어로 원하는 개발 자동화를 지시하면 곧바로 실행 가능한 hook으로 변환.",
-    icon: "💬",
+      '일상 언어로 원하는 개발 자동화를 지시하면 곧바로 실행 가능한 hook으로 변환.',
+    icon: '💬',
   },
 ];
 
@@ -62,20 +63,20 @@ const FeatureCard = ({
 
       tl.to(card, {
         y: -5,
-        boxShadow: "0 20px 40px rgba(143, 70, 255, 0.15)",
+        boxShadow: '0 20px 40px rgba(143, 70, 255, 0.15)',
         duration: 0.3,
-        ease: "power2.out",
+        ease: 'power2.out',
       });
 
       const handleMouseEnter = () => tl.play();
       const handleMouseLeave = () => tl.reverse();
 
-      card.addEventListener("mouseenter", handleMouseEnter);
-      card.addEventListener("mouseleave", handleMouseLeave);
+      card.addEventListener('mouseenter', handleMouseEnter);
+      card.addEventListener('mouseleave', handleMouseLeave);
 
       return () => {
-        card.removeEventListener("mouseenter", handleMouseEnter);
-        card.removeEventListener("mouseleave", handleMouseLeave);
+        card.removeEventListener('mouseenter', handleMouseEnter);
+        card.removeEventListener('mouseleave', handleMouseLeave);
       };
     },
     { dependencies: [] }
@@ -86,37 +87,34 @@ const FeatureCard = ({
       ref={cardRef}
       className={`differentiation-card-${index} cursor-pointer transition-all duration-300 rounded-xl ${
         isActive
-          ? "ring-2 ring-primary bg-gray-800/50 backdrop-blur-sm border border-primary shadow-lg"
-          : "bg-gray-900/50 backdrop-blur-sm border border-gray-700 hover:border-primary/50 hover:bg-gray-800/50"
+          ? 'ring-2 ring-primary bg-gray-800/50 backdrop-blur-sm border border-primary shadow-lg'
+          : 'bg-gray-900/50 backdrop-blur-sm border border-gray-700 hover:border-primary/50 hover:bg-gray-800/50'
       }`}
       onClick={onClick}
       role="button"
       tabIndex={0}
       onKeyDown={(e) => {
-        if (e.key === "Enter" || e.key === " ") {
+        if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
           onClick();
         }
-      }}
-    >
+      }}>
       <div className="p-4 sm:p-6">
         {/* 아이콘 */}
         <div
           className={`w-12 h-12 sm:w-16 sm:h-16 rounded-xl mx-auto mb-3 sm:mb-4 flex items-center justify-center text-xl sm:text-2xl transition-all duration-300 ${
             isActive
-              ? "bg-gradient-to-br from-primary to-accent text-white"
-              : "bg-gray-700 text-gray-300"
-          }`}
-        >
+              ? 'bg-gradient-to-br from-primary to-accent text-white'
+              : 'bg-gray-700 text-gray-300'
+          }`}>
           {feature.icon}
         </div>
 
         {/* 제목 */}
         <h3
           className={`text-lg sm:text-xl font-semibold mb-2 sm:mb-3 text-center transition-colors duration-300 ${
-            isActive ? "text-primary" : "text-white"
-          }`}
-        >
+            isActive ? 'text-primary' : 'text-white'
+          }`}>
           {feature.title}
         </h3>
 
@@ -135,7 +133,7 @@ interface DifferentiationProps {
   className?: string;
 }
 
-export const Differentiation = ({ className = "" }: DifferentiationProps) => {
+export const Differentiation = ({ className = '' }: DifferentiationProps) => {
   const [activeFeature, setActiveFeature] = useState(0);
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
 
@@ -161,12 +159,12 @@ export const Differentiation = ({ className = "" }: DifferentiationProps) => {
           opacity: 1,
           duration: 0.8,
           stagger: 0.2,
-          ease: "power3.out",
+          ease: 'power3.out',
           scrollTrigger: {
             trigger: headerRef.current,
-            start: "top 80%",
-            end: "bottom 20%",
-            toggleActions: "play none none reverse",
+            start: 'top 80%',
+            end: 'bottom 20%',
+            toggleActions: 'play none none reverse',
           },
         }
       );
@@ -190,12 +188,12 @@ export const Differentiation = ({ className = "" }: DifferentiationProps) => {
               scale: 1,
               duration: 0.6,
               delay: index * 0.05,
-              ease: "back.out(1.7)",
+              ease: 'back.out(1.7)',
               scrollTrigger: {
                 trigger: card,
-                start: "top center",
-                end: "bottom 15%",
-                toggleActions: "play none none reverse",
+                start: 'top center',
+                end: 'bottom 15%',
+                toggleActions: 'play none none reverse',
               },
             }
           );
@@ -213,12 +211,12 @@ export const Differentiation = ({ className = "" }: DifferentiationProps) => {
           x: 0,
           opacity: 1,
           duration: 0.8,
-          ease: "power3.out",
+          ease: 'power3.out',
           scrollTrigger: {
             trigger: contentRef.current,
-            start: "top 80%",
-            end: "bottom 20%",
-            toggleActions: "play none none reverse",
+            start: 'top 80%',
+            end: 'bottom 20%',
+            toggleActions: 'play none none reverse',
           },
         }
       );
@@ -227,9 +225,14 @@ export const Differentiation = ({ className = "" }: DifferentiationProps) => {
   );
 
   return (
-    <Section ref={sectionRef} background="gray" className={className}>
+    <Section
+      ref={sectionRef}
+      background="gray"
+      className={className}>
       {/* 섹션 헤더 */}
-      <div ref={headerRef} className="text-center mb-12 sm:mb-16">
+      <div
+        ref={headerRef}
+        className="text-center mb-12 sm:mb-16">
         <h2 className="text-2xl font-bold text-white mb-4 sm:mb-6">
           다른 AI 도구와 뭐가 다른가요?
         </h2>
@@ -266,8 +269,7 @@ export const Differentiation = ({ className = "" }: DifferentiationProps) => {
                 className="w-3 h-3 sm:w-4 sm:h-4 text-white"
                 fill="none"
                 stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
+                viewBox="0 0 24 24">
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -300,10 +302,9 @@ export const Differentiation = ({ className = "" }: DifferentiationProps) => {
           </p>
           <button
             onClick={() =>
-              window.open("https://kiro.dev", "_blank", "noopener,noreferrer")
+              window.open('https://kiro.dev', '_blank', 'noopener,noreferrer')
             }
-            className="bg-primary text-white px-6 sm:px-8 py-3 rounded-xl font-semibold hover:bg-primary/90 transition-all duration-300 shadow-lg hover:shadow-xl text-sm sm:text-base"
-          >
+            className="bg-primary text-white px-6 sm:px-8 py-3 rounded-xl font-semibold hover:bg-primary/90 transition-all duration-300 shadow-lg hover:shadow-xl text-sm sm:text-base">
             무료로 시작하기 →
           </button>
         </div>
