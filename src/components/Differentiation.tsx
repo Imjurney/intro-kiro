@@ -138,7 +138,7 @@ interface DifferentiationProps {
 export const Differentiation = ({ className = "" }: DifferentiationProps) => {
   const [activeFeature, setActiveFeature] = useState(0);
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [activeExample, setActiveExample] = useState(0);
+
   const sectionRef = useRef<HTMLElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
@@ -254,7 +254,6 @@ export const Differentiation = ({ className = "" }: DifferentiationProps) => {
               isActive={activeFeature === index}
               onClick={() => {
                 setActiveFeature(index);
-                setActiveExample(0);
               }}
             />
           ))}
